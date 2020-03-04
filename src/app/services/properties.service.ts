@@ -36,8 +36,13 @@ export class PropertiesService {
 
   getProperties() { }
 
-  createProperty(property: any) {
+  createProperty(property) {
     this.properties.push(property);
+  }
+
+  onDeleteProperty(index) {
+    this.properties.splice(index, 1);
+    this.emitProperties();
   }
 
 }

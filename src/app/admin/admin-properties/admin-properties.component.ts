@@ -15,9 +15,11 @@ export class AdminPropertiesComponent implements OnInit {
   propertiesSubscription: Subscription;
   properties: any[] = [];
 
+  indexToRemove;
+
   constructor(
     private formBuilder: FormBuilder,
-    private propertiesService: PropertiesService
+    private propertiesService: PropertiesService,
   ) { }
 
   ngOnInit(): void {
@@ -50,4 +52,15 @@ export class AdminPropertiesComponent implements OnInit {
   resetForm() {
     this.propertiesForm.reset();
   }
+
+  onDeleteProperty(index: any) {
+    $('#deletePropertyModal').modal('show');
+    this.indexToRemove = index;
+  }
+
+  onConfirmDeleteProperty() {
+    this.propertiesService.onDeleteProperty(this.indexToRemove);
+    $('#deletePropertyModal').modal('hide');
+  }
+
 }
