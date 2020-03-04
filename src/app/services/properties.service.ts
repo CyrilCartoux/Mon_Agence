@@ -10,7 +10,8 @@ export class PropertiesService {
     {
       title: 'Ma maison',
       category: 'Maison',
-      sold: true
+      sold: true,
+      surface: 140
     },
     {
       title: 'Petit appartement',
@@ -34,5 +35,9 @@ export class PropertiesService {
   }
 
   getProperties() { }
+
+  createProperty(property: any) {
+    this.properties.push(property);
+  }
 
 }

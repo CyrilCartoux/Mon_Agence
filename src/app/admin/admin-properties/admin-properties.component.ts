@@ -1,5 +1,8 @@
+import { Subscription } from 'rxjs';
+import { PropertiesService } from './../../services/properties.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-admin-properties',
@@ -9,11 +12,22 @@ import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class AdminPropertiesComponent implements OnInit {
 
   propertiesForm: FormGroup;
+  propertiesSubscription: Subscription;
+  properties: any[] = [];
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private propertiesService: PropertiesService
+  ) { }
 
   ngOnInit(): void {
     this.initPropertiesForm();
+    this.propertiesService.propertiesSubject.subscribe(
+      (data) => {
+        this.properties = data;
+      }
+    );
+    this.propertiesService.emitProperties();
   }
 
   initPropertiesForm() {
@@ -28,6 +42,12 @@ export class AdminPropertiesComponent implements OnInit {
   }
 
   onSubmitPropertiesForm() {
-    console.log(this.propertiesForm.value);
+    const newProperty = this.propertiesForm.value;
+    this.propertiesService.createProperty(newProperty);
+    $('#propertiesFormModal').modal('hide');
+  }
+
+  resetForm() {
+    this.propertiesForm.reset();
   }
 }
