@@ -1,3 +1,4 @@
+import { Property } from './../../models/Property.model';
 import { Subscription } from 'rxjs';
 import { PropertiesService } from './../../services/properties.service';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +14,7 @@ export class AdminPropertiesComponent implements OnInit {
 
   propertiesForm: FormGroup;
   propertiesSubscription: Subscription;
-  properties: any[] = [];
+  properties: Property[] = [];
 
   indexToRemove;
   indexToUpdate;
@@ -27,7 +28,7 @@ export class AdminPropertiesComponent implements OnInit {
   ngOnInit(): void {
     this.initPropertiesForm();
     this.propertiesService.propertiesSubject.subscribe(
-      (data) => {
+      (data: Property[]) => {
         this.properties = data;
       }
     );
@@ -47,7 +48,7 @@ export class AdminPropertiesComponent implements OnInit {
   }
 
   onSubmitPropertiesForm() {
-    const newProperty = this.propertiesForm.value;
+    const newProperty: Property = this.propertiesForm.value;
     if (this.editMode) {
       this.propertiesService.updateProperty(newProperty, this.indexToUpdate);
     } else {
@@ -71,7 +72,7 @@ export class AdminPropertiesComponent implements OnInit {
     $('#deletePropertyModal').modal('hide');
   }
 
-  onEditProperty(property) {
+  onEditProperty(property: Property) {
     this.editMode = true;
     $('#propertiesFormModal').modal('show');
     this.propertiesForm.get('title').setValue(property.title);

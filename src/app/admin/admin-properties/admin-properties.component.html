@@ -28,6 +28,10 @@
             <p>
                 <span *ngIf="property.price && property.price !== ''"> {{ property.price }} €</span>
             </p>
+            <p>
+                <span *ngIf="property.sold" class="text-danger">Vendu !</span>
+                <span *ngIf="!property.sold" class="text-success">A vendre </span>
+            </p>
         </div>
     </div>
 </div>
