@@ -12,7 +12,7 @@
             <div class="d-flex">
                 <h3 class="font-weight-normal">{{property.title}}</h3>
                 <div class="ml-auto">
-                    <button class="btn btn-primary m-1"><i class="fas fa-edit" type="button"></i></button>
+                    <button class="btn btn-primary m-1"><i class="fas fa-edit" type="button" (click)="onEditProperty(property)"></i></button>
                     <button class="btn btn-danger m-1"><i class="fas fa-trash-alt" type="button" (click)="onDeleteProperty(i)"></i></button>
                 </div>
             </div>
@@ -52,8 +52,8 @@
                             <label class="input-group-text" for="inputGroupSelect01">Catégorie</label>
                         </div>
                         <select class="custom-select" id="inputGroupSelect01" formControlName="category">
-                            <option value="appartement">Appartement</option>
-                            <option value="maison">Maison</option>
+                            <option value="Appartement">Appartement</option>
+                            <option value="Maison">Maison</option>
                         </select>
                     </div>
                     <div class="form-row">
@@ -73,6 +73,10 @@
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Prix" formControlName="price">
                     </div>
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1">Vendu</label>
+                      </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>

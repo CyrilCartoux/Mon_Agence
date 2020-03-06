@@ -25,16 +25,15 @@ export class PropertiesService {
     }
   ];
 
+  constructor() { }
 
   propertiesSubject = new Subject<any[]>();
 
-  constructor() { }
+  getProperties() { }
 
   emitProperties() {
     this.propertiesSubject.next(this.properties);
   }
-
-  getProperties() { }
 
   createProperty(property) {
     this.properties.push(property);
@@ -42,6 +41,11 @@ export class PropertiesService {
 
   onDeleteProperty(index) {
     this.properties.splice(index, 1);
+    this.emitProperties();
+  }
+
+  updateProperty(property, index) {
+    this.properties[index] = property;
     this.emitProperties();
   }
 
