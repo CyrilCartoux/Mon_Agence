@@ -1,0 +1,154 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200309.183720.5600.0.001.json",
+    "dumpEventTime": "2020-03-09T18:37:20Z",
+    "dumpEventTimeStamp": "1583775440565",
+    "processId": 5600,
+    "cwd": "C:\\Users\\6ssou\\Desktop\\Dev\\UDEMY -\\Site WEB - ANGULAR Agence Immo\\monAgence",
+    "commandLine": [
+      "D:\\NodeJS\\node.exe",
+      "C:\\Users\\6ssou\\Desktop\\Dev\\UDEMY -\\Site WEB - ANGULAR Agence Immo\\monAgence\\node_modules\\@ngtools\\webpack\\src\\type_checker_worker.js",
+      "9d93e901-158a-4cf9-ba1b-2f0582ffcfeb"
+    ],
+    "nodejsVersion": "v12.14.1",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.14.1",
+      "v8": "7.7.299.13-node.16",
+      "uv": "1.33.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.14.1/node-v12.14.1-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.14.1/node-v12.14.1.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.14.1/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18363",
+    "osVersion": "Windows 10 Pro",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+        "speed": 3696,
+        "user": 140906,
+        "nice": 0,
+        "sys": 292453,
+        "idle": 4531421,
+        "irq": 82140
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+        "speed": 3696,
+        "user": 34718,
+        "nice": 0,
+        "sys": 26531,
+        "idle": 4903328,
+        "irq": 765
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+        "speed": 3696,
+        "user": 305437,
+        "nice": 0,
+        "sys": 91531,
+        "idle": 4567609,
+        "irq": 2234
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+        "speed": 3696,
+        "user": 85781,
+        "nice": 0,
+        "sys": 55984,
+        "idle": 4822812,
+        "irq": 343
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+        "speed": 3696,
+        "user": 160171,
+        "nice": 0,
+        "sys": 80234,
+        "idle": 4724171,
+        "irq": 1328
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+        "speed": 3696,
+        "user": 68312,
+        "nice": 0,
+        "sys": 29546,
+        "idle": 4866718,
+        "irq": 671
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+        "speed": 3696,
+        "user": 126546,
+        "nice": 0,
+        "sys": 72859,
+        "idle": 4765171,
+        "irq": 1984
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+        "speed": 3696,
+        "user": 50281,
+        "nice": 0,
+        "sys": 26875,
+        "idle": 4887421,
+        "irq": 593
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+        "speed": 3696,
+        "user": 117875,
+        "nice": 0,
+        "sys": 58031,
+        "idle": 4788671,
+        "irq": 1593
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+        "speed": 3696,
+        "user": 62453,
+        "nice": 0,
+        "sys": 43218,
+        "idle": 4858890,
+        "irq": 1609
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+        "speed": 3696,
+        "user": 90828,
+        "nice": 0,
+        "sys": 64687,
+        "idle": 4809046,
+        "irq": 1515
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz",
+        "speed": 3696,
+        "user": 110031,
+        "nice":
