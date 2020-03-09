@@ -24,4 +24,9 @@ export class AuthentificationService {
       }
     );
   }
+
+  signOutUser() {
+    firebase.auth().signOut();
+  }
+
 }
