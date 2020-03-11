@@ -76,4 +76,19 @@ export class PropertiesService {
     );
   }
 
+  removeFile(fileLink: string) {
+    if (fileLink) {
+      const storageRef = firebase.storage().refFromURL(fileLink);
+      storageRef.delete().then(
+        () => {
+          console.log('File deleted');
+        }
+      ).catch(
+        (error) => {
+          console.error(error);
+        }
+      );
+    }
+  }
+
 }

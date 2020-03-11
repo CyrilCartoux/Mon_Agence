@@ -76,6 +76,9 @@ export class AdminPropertiesComponent implements OnInit {
   }
 
   onConfirmDeleteProperty() {
+    if (this.properties[this.indexToRemove].photo && this.properties[this.indexToRemove].photo !== '') {
+      this.propertiesService.removeFile(this.properties[this.indexToRemove].photo);
+    }
     this.propertiesService.onDeleteProperty(this.indexToRemove);
     $('#deletePropertyModal').modal('hide');
   }
@@ -103,9 +106,11 @@ export class AdminPropertiesComponent implements OnInit {
 
   onUploadFile(event) {
     this.photoUploading = true;
-    console.log(event);
     this.propertiesService.uploadFile(event.target.files[0]).then(
       (url: string) => {
+        if (this.photoUrl && this.photoUrl !== '') {
+          this.propertiesService.removeFile(this.photoUrl);
+        }
         this.photoUrl = url;
         this.photoUploading = false;
         this.photoUploaded = true;
