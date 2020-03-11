@@ -32,6 +32,7 @@ export class AdminPropertiesComponent implements OnInit {
         this.properties = data;
       }
     );
+    this.propertiesService.getProperties();
     this.propertiesService.emitProperties();
   }
 
@@ -49,6 +50,7 @@ export class AdminPropertiesComponent implements OnInit {
 
   onSubmitPropertiesForm() {
     const newProperty: Property = this.propertiesForm.value;
+    newProperty.sold = this.propertiesForm.get('sold').value ? this.propertiesForm.get('sold').value : false;
     if (this.editMode) {
       this.propertiesService.updateProperty(newProperty, this.indexToUpdate);
     } else {
@@ -78,6 +80,7 @@ export class AdminPropertiesComponent implements OnInit {
     this.propertiesForm.get('title').setValue(property.title);
     this.propertiesForm.get('category').setValue(property.category);
     this.propertiesForm.get('surface').setValue(property.surface);
+    this.propertiesForm.get('rooms').setValue(property.rooms);
     this.propertiesForm.get('description').setValue(property.description);
     this.propertiesForm.get('price').setValue(property.price);
     this.propertiesForm.get('sold').setValue(property.sold);
