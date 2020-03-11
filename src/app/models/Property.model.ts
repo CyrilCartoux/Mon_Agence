@@ -6,6 +6,7 @@ export class Property {
        public rooms: string,
        public price: string,
        public sold: boolean,
-       public description?: string
+       public description?: string,
+       public photo?: string
     ) { }
 }
