@@ -67,6 +67,7 @@ export class AdminPropertiesComponent implements OnInit {
   resetForm() {
     this.editMode = false;
     this.propertiesForm.reset();
+    this.photoUrl = '';
   }
 
   onDeleteProperty(index: any) {
@@ -89,6 +90,7 @@ export class AdminPropertiesComponent implements OnInit {
     this.propertiesForm.get('description').setValue(property.description);
     this.propertiesForm.get('price').setValue(property.price);
     this.propertiesForm.get('sold').setValue(property.sold);
+    this.photoUrl = property.photo ? property.photo : '';
     const index = this.properties.findIndex(
       (propertyEl) => {
         if (propertyEl === property) {
