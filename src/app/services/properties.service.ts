@@ -2,7 +2,6 @@ import { Property } from './../models/Property.model';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import * as firebase from 'firebase';
-import { promise } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +19,21 @@ export class PropertiesService {
       this.properties = data.val() ? data.val() : [];
       this.emitProperties();
     });
+  }
+
+  getSingleProperties(id: number) {
+    return new Promise(
+      (resolve, reject) => {
+        firebase.database().ref('/properties/' + id).once('value').then(
+          (data) => {
+            resolve(data.val());
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+      }
+    );
   }
 
   emitProperties() {
