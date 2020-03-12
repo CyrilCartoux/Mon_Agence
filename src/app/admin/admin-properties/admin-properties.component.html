@@ -11,7 +11,9 @@
         <div *ngFor="let property of properties; let i = index" class="col-12 shadow-sm p-4 mb-3 bg-light">
             <div class="row">
                 <div class="col-3">
-                    <img *ngIf="property.photo && property.photo !== ''" [src]="property.photo" class="w-100">
+                    <div *ngFor="let photo of property.photos; let first = first">
+                        <img *ngIf="first" [src]="photo" class="w-100">
+                    </div>
                 </div>
                 <div class="col-9">
                     <div class="d-flex">
@@ -88,8 +90,15 @@
                     </div>
 
                     <!-- Upload File : -->
-                    <div *ngIf="photoUrl && photoUrl !== ''" class="d-flex mb-3">
-                        <img [src]="photoUrl" class="w-50 mx-auto">
+                    <div class="row">
+                        <div *ngFor="let photo of photosAdded; let i = index"
+                            class="col-4 border-secondary rounded m-1 p-1 bg-light position-relative">
+                            <span class="text-danger position-absolute mr-1 deletePhoto"
+                                (click)="onRemoveAddedPhoto(i)">
+                                <i class="fas fa-times"></i>
+                            </span>
+                            <img [src]="photo" class="w-100">
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="col-9">
