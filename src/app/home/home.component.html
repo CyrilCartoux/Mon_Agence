@@ -1,7 +1,7 @@
 <div class="container py-5">
-    <h1 class="display-4">Nos biens immobilier</h1>
+    <h1 class="display-4">Nos biens</h1>
     <div class="row mt-5">
-        <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let property of properties; let i = index">
+        <div class="col-md-6 col-lg-4 d-flex align-items-center justify-content-center" *ngFor="let property of properties; let i = index">
             <div class="card h-100" style="width: 18rem;">
                 <div *ngFor="let photo of property.photos; let first = first">
                     <img [src]="photo" class="card-img-top" *ngIf="first">

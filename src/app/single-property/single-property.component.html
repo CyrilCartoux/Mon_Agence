@@ -10,9 +10,10 @@
                     <img [src]="photo" class="w-100" *ngIf="first">
                 </div>
             </div>
+
             <!-- CAROUSEL -->
 
-            <div *ngIf="property.photos.length > 1">
+            <div *ngIf="property.photos.length > 1" class="mt-5">
                 <div id="carouselExampleControls" class="carousel slide bg-dark" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item" *ngFor="let photo of property.photos; let first = first"
@@ -32,7 +33,7 @@
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6 mt-5">
             <h3 class="font-weight-normal">{{property.price}}€</h3>
             <p class="font-weight-light">
                 {{ property.category }}
