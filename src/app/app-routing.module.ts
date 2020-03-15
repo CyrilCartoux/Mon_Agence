@@ -1,3 +1,4 @@
+import { AuthGuardService } from './services/auth-guard.service';
 import { SinglePropertyComponent } from './single-property/single-property.component';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './authentification/signin/signin.component';
@@ -9,9 +10,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'admin/dashboard', component: AdminDashboardComponent },
+  { path: 'admin/dashboard', canActivate: [AuthGuardService], component: AdminDashboardComponent },
   { path: 'login', component: SigninComponent },
-  { path: 'property/:id', component: SinglePropertyComponent},
+  { path: 'property/:id', component: SinglePropertyComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home' }
 ];
